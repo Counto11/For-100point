@@ -10,11 +10,14 @@ lst = []
 for i in range(2, 101):
     st = sem(i)
     ost = str(sum([int(i) for i in st]) % 7)
-    if len(st) % 2 == 0:
-        st = ost + st[len(st) // 2:] + st[:len(st) // 2] + ost
+    if len(st) % 3 == 0:
+        st = sorted([int(st[:len(st) // 3]), int(st[len(st) // 3:(len(st) // 3) * 2]),
+                     int(st[(len(st) // 3) * 2:])])
+        st = ost + ''.join([str(i) for i in st]) + ost
     else:
-        st += ost
-        st = st[len(st) // 2:] + st[:len(st) // 2]
-    lst.append((int(st, 7), i))
+        st = ost + st + ost
+    lst.append(int(st, 7))
 
-print(min(lst)[1])
+print(max([i for i in lst if i < 100]))
+
+# укажите ммксимальное Р меньше 100
