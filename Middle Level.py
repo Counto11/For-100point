@@ -19,5 +19,3 @@ for i in range(2, 101):
     lst.append(int(st, 7))
 
 print(max([i for i in lst if i < 100]))
-
-# укажите ммксимальное Р меньше 100
