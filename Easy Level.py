@@ -12,4 +12,3 @@ for i in range(1, 100):
     if int(st, 2) > 100:
         print(i)
         break
-
